@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Viral Downline - Tu Marketing Automatizado con IA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #4A6FFF;
+            --primary-dark: #3A5CE8;
+            --accent: #FF6B00;
+            --accent-dark: #E55A00;
+            --success: #2ECC71;
+            --dark: #0F172A;
+            --light: #F8FAFC;
+            --gray: #64748B;
+            --light-gray: #E2E8F0;
+            --white: #FFFFFF;
+            --shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Hero */
+        .hero {
+            background: linear-gradient(135deg, var(--dark) 0%, #1E293B 100%);
+            color: var(--white);
+            padding: 60px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(74, 111, 255, 0.2) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(to right, var(--accent), var(--accent-dark));
+            color: var(--white);
+            font-size: 1.3rem;
+            font-weight: 700;
+            padding: 18px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            box-shadow: 0 8px 20px rgba(255, 107, 0, 0.3);
+            transition: var(--transition);
+            position: relative;
+            z-index: 1;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(255, 107, 0, 0.4);
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-dark {
+            background-color: #F8FAFC;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--dark);
+        }
+
+        .section-title span {
+            color: var(--primary);
+        }
+
+        /* Emily Section */
+        .emily-section {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .emily-avatar {
+            flex: 0 0 300px;
+            text-align: center;
+        }
+
+        .emily-icon {
+            font-size: 200px;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .emily-content {
+            flex: 1;
+        }
+
+        .emily-content h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .emily-list {
+            list-style: none;
+        }
+
+        .emily-list li {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .emily-list i {
+            color: var(--success);
+            margin-right: 12px;
+            margin-top: 4px;
+            font-size: 1.2rem;
+        }
+
+        /* Matrix Section */
+        .matrix-section {
+            text-align: center;
+        }
+
+        .matrix-intro {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            color: var(--gray);
+        }
+
+        .matrix-levels {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .matrix-level {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 25px;
+            width: 280px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border-top: 5px solid var(--primary);
+        }
+
+        .matrix-level:hover {
+            transform: translateY(-10px);
+        }
+
+        .matrix-level.highlight {
+            border-top-color: var(--accent);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .matrix-level.highlight::before {
+            content: '¡POPULAR!';
+            position: absolute;
+            top: 15px;
+            right: -35px;
+            background: var(--accent);
+            color: white;
+            padding: 5px 40px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            transform: rotate(45deg);
+        }
+
+        .level-title {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        .level-amount {
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .level-desc {
+            color: var(--gray);
+            font-size: 1rem;
+        }
+
+        .key-benefit {
+            background: linear-gradient(to right, #E8F4FF, #F0F9FF);
+            border-left: 5px solid var(--success);
+            padding: 25px;
+            border-radius: 10px;
+            max-width: 800px;
+            margin: 40px auto 0;
+            text-align: center;
+        }
+
+        .key-benefit h4 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 10px;
+        }
+
+        /* Earnings Breakdown */
+        .earnings-breakdown {
+            background: linear-gradient(135deg, var(--dark) 0%, #1E293B 100%);
+            color: var(--white);
+            border-radius: 20px;
+            padding: 50px;
+            margin-top: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .earnings-breakdown::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            left: -100px;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(255, 107, 0, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .earnings-title {
+            font-size: 2.2rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--white);
+        }
+
+        .earnings-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .earnings-card {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 15px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .earnings-card h4 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+
+        .level-breakdown {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        .level-breakdown li {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .level-number {
+            font-weight: 600;
+        }
+
+        .level-income {
+            font-weight: 800;
+            color: var(--success);
+        }
+
+        .total-income {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--success);
+            margin: 30px 0 20px;
+        }
+
+        .level8-cta {
+            background: rgba(255, 107, 0, 0.15);
+            border: 2px solid var(--accent);
+            color: var(--white);
+            font-size: 1.3rem;
+            font-weight: 800;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Trial Section */
+        .trial-section {
+            text-align: center;
+            padding: 60px 0;
+        }
+
+        .trial-card {
+            background: linear-gradient(135deg, #FFE8D9 0%, #FFD1B3 100%);
+            border-radius: 20px;
+            padding: 50px;
+            max-width: 900px;
+            margin: 0 auto;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .trial-card::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(255, 107, 0, 0.2) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .trial-title {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+
+        .trial-warning {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #B45309;
+            font-weight: 600;
+        }
+
+        .urgency-cta {
+            display: inline-block;
+            background: linear-gradient(to right, #FF3D00, #FF6B00);
+            color: var(--white);
+            font-size: 1.4rem;
+            font-weight: 800;
+            padding: 20px 50px;
+            border-radius: 50px;
+            text-decoration: none;
+            box-shadow: 0 10px 25px rgba(255, 107, 0, 0.4);
+            transition: var(--transition);
+            margin-bottom: 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .urgency-cta:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 30px rgba(255, 107, 0, 0.5);
+        }
+
+        .trial-countdown {
+            font-size: 1.1rem;
+            color: var(--gray);
+            margin-top: 15px;
+            font-weight: 600;
+        }
+
+        .secondary-link {
+            display: inline-block;
+            color: var(--gray);
+            text-decoration: none;
+            margin-top: 20px;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .secondary-link:hover {
+            color: var(--primary);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--dark);
+            color: var(--light);
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 20px 0;
+        }
+
+        .footer-links a {
+            color: var(--light-gray);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+        }
+
+        .copyright {
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin-top: 20px;
+        }
+
+        /* Trust Elements */
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        .badge i {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: var(--success);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .emily-section {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .emily-avatar {
+                flex: 0 0 auto;
+            }
+            
+            .emily-list li {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .matrix-levels {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .earnings-breakdown {
+                padding: 30px 20px;
+            }
+            
+            .trial-card {
+                padding: 30px 20px;
+            }
+            
+            .urgency-cta {
+                font-size: 1.2rem;
+                padding: 15px 30px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero {
+                padding: 40px 0 60px;
+            }
+            
+            .section {
+                padding: 60px 0;
+            }
+            
+            .cta-button, .urgency-cta {
+                width: 100%;
+                text-align: center;
+            }
+            
+            .earnings-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        /* Animation for numbers */
+        @keyframes countUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-number {
+            animation: countUp 1s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>¿Y SI UNA IA CONSTRUYERA TU RED DE MERCADEO POR TI... MIENTRAS TÚ SOLO COMPARTES TU ENLACE?</h1>
+            <p class="hero-subtitle">Activa el sistema y comienza a ganar de forma automática</p>
+            <a href="#upgrade" class="cta-button">🔓 ASEGURA TU LUGAR GRATIS AHORA</a>
+            
+            <!-- Trust Badges -->
+            <div class="trust-badges">
+                <div class="badge">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Pago Seguro SSL</span>
+                </div>
+                <div class="badge">
+                    <i class="fas fa-clock"></i>
+                    <span>7 Días sin Riesgo</span>
+                </div>
+                <div class="badge">
+                    <i class="fas fa-globe"></i>
+                    <span>Disponible Globalmente</span>
+                </div>
+                <div class="badge">
+                    <i class="fas fa-users"></i>
+                    <span>+5,000 Miembros</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emily Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">CONOCE A <span>EMILY</span> — TU CERRADORA DE VENTAS AUTOMATIZADA CON IA</h2>
+            
+            <div class="emily-section">
+                <div class="emily-avatar">
+                    <div class="emily-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>Emily - Tu Asistente IA</h3>
+                    <p>Trabaja 24/7 para tu negocio</p>
+                </div>
+                
+                <div class="emily-content">
+                    <p>Emily trabaja día y noche explicando el negocio, superando objeciones y guiando a tus prospectos para que se activen en tu matriz. Se activa instantáneamente cuando tú lo haces.</p>
+                    
+                    <ul class="emily-list">
+                        <li><i class="fas fa-check-circle"></i> Explicar el sistema AI Viral Downline de forma clara</li>
+                        <li><i class="fas fa-check-circle"></i> Detallar cómo funciona la matriz de compensación 3x8</li>
+                        <li><i class="fas fa-check-circle"></i> Cerrar prospectos de manera automática</li>
+                        <li><i class="fas fa-check-circle"></i> Ayudarte a construir un equipo sin descanso</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Matrix Section -->
+    <section class="section section-dark">
+        <div class="container">
+            <h2 class="section-title">TU MATRIZ <span>3X8</span> — INGRESOS RESIDUALES A PARTIR DEL MES 2</h2>
+            
+            <p class="matrix-intro">Como miembro gratuito, ya tienes un lugar. Al mejorar tu cuenta, desbloqueas toda la estructura de ingresos, <strong>incluyendo la posibilidad de ganar durante tu prueba de 7 días</strong>.</p>
+            
+            <div class="matrix-levels">
+                <div class="matrix-level">
+                    <h3 class="level-title">NIVEL 1</h3>
+                    <div class="level-amount">$10/miembro</div>
+                    <p class="level-desc">3 miembros = <strong>$30/mes</strong><br>¡Sin importar cómo lleguen allí!</p>
+                </div>
+                
+                <div class="matrix-level">
+                    <h3 class="level-title">NIVELES 2-7</h3>
+                    <div class="level-amount">$2/miembro</div>
+                    <p class="level-desc">Ganas comisiones del nivel 1 al 7 con <strong>cero</strong> referidos personales</p>
+                </div>
+                
+                <div class="matrix-level highlight">
+                    <h3 class="level-title">NIVEL 8</h3>
+                    <div class="level-amount">$3/miembro</div>
+                    <p class="level-desc"><strong>¡Desbloquea con solo 3 directos y lleva tus ingresos a otro nivel!</strong></p>
+                </div>
+            </div>
+            
+            <div class="key-benefit">
+                <h4>¡TU MEMBRESÍA SE PAGA SOLA!</h4>
+                <p>Con solo 3 miembros en tu Nivel 1, recuperas tu inversión mensual. ¡Todo lo demás es ganancia pura!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Earnings Breakdown -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">¿CUÁNTO PODRÍAS <span>GANAR</span>? DESGLOSE DE GANANCIAS</h2>
+            
+            <div class="earnings-breakdown">
+                <h3 class="earnings-title">POTENCIAL DE INGRESOS EN CADA NIVEL</h3>
+                
+                <div class="earnings-grid">
+                    <div class="earnings-card">
+                        <h4>NIVELES 1-7 (Funcionan en automático)</h4>
+                        <ul class="level-breakdown">
+                            <li><span class="level-number">Nivel 1:</span> <span class="level-income">$30/mes</span></li>
+                            <li><span class="level-number">Nivel 2:</span> <span class="level-income">$18/mes</span></li>
+                            <li><span class="level-number">Nivel 3:</span> <span class="level-income">$54/mes</span></li>
+                            <li><span class="level-number">Nivel 4:</span> <span class="level-income">$162/mes</span></li>
+                            <li><span class="level-number">Nivel 5:</span> <span class="level-income">$486/mes</span></li>
+                            <li><span class="level-number">Nivel 6:</span> <span class="level-income">$1,458/mes</span></li>
+                            <li><span class="level-number">Nivel 7:</span> <span class="level-income">$4,374/mes</span></li>
+                        </ul>
+                        
+                        <div class="total-income">$6,582/mes</div>
+                        <p>¡Sin necesidad de que tú patrocines a nadie!</p>
+                    </div>
+                    
+                    <div class="earnings-card">
+                        <h4>EL SALTO FINAL: NIVEL 8</h4>
+                        
+                        <div class="level8-cta">
+                            ¡DESBLOQUEA EL NIVEL 8 CON 3 DIRECTOS Y LLEVA TUS INGRESOS A OTRO NIVEL!
+                        </div>
+                        
+                        <ul class="level-breakdown">
+                            <li><span class="level-number">Nivel 8:</span> <span class="level-income">$19,683/mes adicionales</span></li>
+                        </ul>
+                        
+                        <div class="total-income">$26,265/mes</div>
+                        <p><strong>Potencial Total de la Matriz Completa</strong></p>
+                        <p style="margin-top: 15px; font-weight: 600;">🚀 Solo necesitas 3 referidos personales para activar este nivel de ingresos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trial Section -->
+    <section class="trial-section">
+        <div class="container">
+            <div class="trial-card" id="upgrade">
+                <h2 class="trial-title">TU PRUEBA GRATIS DE 7 DÍAS YA COMENZÓ</h2>
+                
+                <p class="trial-warning">
+                    ⚠️ <strong>Puedes generar comisiones durante tu periodo de prueba.</strong> Pero para <strong>retirar todo el dinero que ganes</strong>, debes mejorar tu cuenta antes de que termine el día 7. Si no lo haces, las comisiones se pierden.
+                </p>
+                
+                <a href="#" class="urgency-cta">⚡ MEJORA TU CUENTA POR SOLO $28 ANTES DE QUE TERMINE EL DÍA 7</a>
+                
+                <div class="trial-countdown">
+                    <i class="fas fa-clock"></i> Oferta expira en: <span id="countdown">07:00:00</span>
+                </div>
+                
+                <a href="#" class="secondary-link">No, gracias. Llévame a mi panel de control</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="#">Términos de Servicio</a>
+                <a href="#">Política de Privacidad</a>
+                <a href="#">Contacto</a>
+                <a href="#">FAQ</a>
+                <a href="#">Soporte</a>
+            </div>
+            
+            <p class="copyright">
+                Copyright © 2025, AIViralDownline.com. Todos los derechos reservados.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Countdown Timer
+        function updateCountdown() {
+            const now = new Date();
+            const endOfDay = new Date();
+            endOfDay.setHours(23, 59, 59, 999);
+            
+            const timeLeft = endOfDay - now;
+            
+            if (timeLeft > 0) {
+                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+                
+                document.getElementById('countdown').textContent = 
+                    `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            } else {
+                document.getElementById('countdown').textContent = "¡TIEMPO AGOTADO!";
+            }
+        }
+        
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+        
+        // Animate numbers when scrolling into view
+        function animateNumbers() {
+            const numbers = document.querySelectorAll('.level-income, .total-income');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-number');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            numbers.forEach(number => observer.observe(number));
+        }
+        
+        // Initialize when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            animateNumbers();
+            
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
